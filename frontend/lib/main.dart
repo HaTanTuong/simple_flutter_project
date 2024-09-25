@@ -101,19 +101,31 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Ứng dụng full-stack flutter dơn giản')),
+      appBar: AppBar(
+        title: const Text('Ứng dụng full-stack flutter dơn giản'),
+        backgroundColor: const Color.fromARGB(255, 56, 174, 234),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(18.0),
         child: Column(
           children: [
             TextField(
               controller: controller,
-              decoration: const InputDecoration(labelText: 'Tên'),
+              decoration: const InputDecoration(
+                labelText: 'Tên',
+                labelStyle: TextStyle(color: Colors.blue),
+                border: OutlineInputBorder(),
+                prefixIcon: Icon(Icons.person),
+              ),
             ),
             const SizedBox(height: 20),
             FilledButton(
               onPressed: sendName,
-              child: const Text('Gửi'),
+              style: FilledButton.styleFrom(
+                backgroundColor: const Color.fromARGB(255, 58, 183, 83),
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+              ),
+              child: const Text('Gửi', style: TextStyle(color: Colors.white)),
             ),
             //Hiển thị thông điệp phản hồi từ server
             Text(
